@@ -17,15 +17,199 @@ tr:hover{
 td{
 	border: 1px solid green;
 	border-radius: 5px;
+	-moz-border-radius: 5px;
 }
 #test{
 	border: 1px solid blue;
 	border-radius: 5px;
+	-moz-border-radius: 5px;
 	background-color: white;
 	text-align: center;
 }
-#no-css{
+#transparent-block{
+	border: none;
+	background-color: #f2e5e5;
+	text-align: center;
+}
 
+#white-block{
+	border: none;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: white;
+}
+/* Principal */
+#menu{
+        width: 100%;
+        margin: 0;
+        padding: 10px 0 0 0;
+        list-style: none;
+        background: #111;
+        background: -moz-linear-gradient(#444, #111);
+        background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #111),color-stop(1, #444));
+        background: -webkit-linear-gradient(#444, #111);
+        background: -o-linear-gradient(#444, #111);
+        background: -ms-linear-gradient(#444, #111);
+        background: linear-gradient(#444, #111);
+        -moz-border-radius: 25px;
+        border-radius: 50px;
+        -moz-box-shadow: 0 2px 1px #9c9c9c;
+        -webkit-box-shadow: 0 2px 1px #9c9c9c;
+        box-shadow: 0 2px 1px #9c9c9c;
+}
+
+#menu li{
+        float: left;
+        padding: 0 0 10px 0;
+        position: relative;
+}
+
+#menu a{
+        float: left;
+        height: 25px;
+        padding: 0 25px;
+        color: #999;
+        text-transform: uppercase;
+        font: bold 12px/25px Arial, Helvetica;
+        text-decoration: none;
+        text-shadow: 0 1px 0 #000;
+}
+
+#menu li:hover > a{
+        color: #fafafa;
+}
+
+*html #menu li a:hover{ /* IE6 */
+        color: #fafafa;
+}
+
+#menu li:hover > ul{
+        display: block;
+}
+
+/* Sous-menu */
+
+#menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 99999;
+    background: #444;
+    background: -moz-linear-gradient(#444, #111);
+    background: -webkit-gradient(linear,left bottom,left top,color-stop(0, #111),color-stop(1, #444));
+    background: -webkit-linear-gradient(#444, #111);
+    background: -o-linear-gradient(#444, #111);
+    background: -ms-linear-gradient(#444, #111);
+    background: linear-gradient(#444, #111);
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#menu ul li{
+    float: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    -moz-box-shadow: 0 1px 0 #111111, 0 2px 0 #777777;
+    -webkit-box-shadow: 0 1px 0 #111111, 0 2px 0 #777777;
+    box-shadow: 0 1px 0 #111111, 0 2px 0 #777777;
+}
+
+#menu ul li:last-child{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+#menu ul a{
+    padding: 10px;
+    height: auto;
+    line-height: 1;
+    display: block;
+    white-space: nowrap;
+    float: none;
+    text-transform: none;
+}
+
+*html #menu ul a{ /* IE6 */
+        height: 10px;
+        width: 150px;
+}
+
+*:first-child+html #menu ul a{ /* IE7 */
+        height: 10px;
+        width: 150px;
+}
+
+#menu ul a:hover{
+        background: #0186ba;
+        background: -moz-linear-gradient(#04acec,  #0186ba);
+        background: -webkit-gradient(linear, left top, left bottom, from(#04acec), to(#0186ba));
+        background: -webkit-linear-gradient(#04acec,  #0186ba);
+        background: -o-linear-gradient(#04acec,  #0186ba);
+        background: -ms-linear-gradient(#04acec,  #0186ba);
+        background: linear-gradient(#04acec,  #0186ba);
+}
+
+#menu ul li:first-child a{
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+}
+
+#menu ul li:first-child a:after{
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #444;
+}
+
+#menu ul li:first-child a:hover:after{
+    border-bottom-color: #04acec;
+}
+
+#menu ul li:last-child a{
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Rétablissement du flottement */
+#menu:after{
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+}
+
+* html #menu             { zoom: 1; } /* IE6 */
+*:first-child+html #menu { zoom: 1; } /* IE7 */
+
+#menu ul li:first-child a:after{
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: -8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #444;
+}
+
+#menu ul li:first-child a:hover:after{
+    border-bottom-color: #04acec;
 }
 </style>
 <script type="text/javascript">
@@ -41,46 +225,60 @@ td{
 		<table width="900" align="center" background-color="white">
 			<caption>Site structure</caption>
 			<tr>
-				<td colspan="8" id="test">header-contender</td>
+				<td colspan="8" id="transparent-block">
+					<img src="images/logo_soifdeducation.jpg" alt="Accueil Soif d education" height="120" width="900"/>
+				</td>
 			</tr>
 			<tr>
-				<td colspan="8" id="test">menu-contender</td>
+				<td colspan="8" id="transparent-block" height="50">
+				<ul id="menu">
+				        <li><a href="#">Home</a></li>
+				        <li>
+			                   <a href="#">Categories</a>
+                			   <ul>
+                        		      <li><a href="#">CSS</a></li>
+                        		      <li><a href="#">Graphic design</a></li>
+                        		      <li><a href="#">Development tools</a></li>
+                        		      <li><a href="#">Web design</a></li>
+                			   </ul>
+        				</li>
+        				<li><a href="#">Work</a></li>
+        				<li><a href="#">About</a></li>
+        				<li><a href="#">Contact</a></li>
+				</ul>				
+				</td>
 				<!--<td>3</td>-->
 			</tr>	
 			<tr>
-				<td rowspan="3" colspan="7" width="500">
-					<table width="500" height="200">
+				<td rowspan="3" colspan="7" width="500" id="white-block">
+					<table width="700" height="200" align="center">
 						<tr>
-							<td colspan="2" id="test">slideshow</td>
+							<td colspan="7" id="test">slideshow</td>
 						</tr>
 						<tr>
-							<td id="test">Complementary News</td>
-							<td id="test">another thing</td>
+							<td id="test" colspan="4">Complementary News</td>
+							<td id="transparent-block" colspan="3">another thing</td>
 						</tr>
 						<tr>
-							<td colspan="2" id="test">Others Articles</td>
+							<td colspan="7" id="test">Others Articles</td>
 						</tr>			
 					</table>
-				<!--	<div id="test">body-left contender</div>
-					<div id="test">body-left contender</div>
-					<div id="test">body-left contender</div>
-				-->	
 				</td>
 				<td height="50">body-right contender</td>
 			</tr>	
 			<tr>
-				<td height="50">body-left contender</td>
+				<td height="50">body-right contender</td>
 				<!--<td colspan="2">3</td>-->
 			</tr>	
 			<tr>
 				<td height="50">body-right contender</td>
 			</tr>	
 			<tr>
-				<td colspan="7"></td>
+				<td colspan="7" id="transparent-block"></td>
 				<td>body-right contender</td>
 			</tr>	
 			<tr>
-				<td colspan="8">footer contender</td>
+				<td colspan="8" id="test">footer contender</td>
 			</tr>	
 
 		</table>
